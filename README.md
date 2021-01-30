@@ -1,4 +1,4 @@
-# Recommending "Offer Price" for First-Time Home Buyers
+# Recommending "Offer Price" to First-Time Home Buyers
 
 **Authors**: [Shawn Samuel](mailto:shawnjohnsamuel@gmail.com)  
 
@@ -22,17 +22,20 @@ We will prepare and explore the data to see which ones have the most impact for 
 
 ## Methods
 
-Describe the process for analyzing or modeling the data. For Phase 1, this will be descriptive analysis.
+I built an initial baseline model using recommended features and no transformations. After this I followed the following plan:
 
-***
-Questions to consider:
-* How did you prepare, analyze or model the data?
-* Why is this approach appropriate given the data and the business problem?
-***
+➡️ Create a pyfile function for subsequent analysis  
+☐ Identify and tackle outliers (I noticed a bedroom outlier in particular)  
+☐ Log continous variables  
+☐ One Hot Encode categorical variables  
+☐ Create an age columns based on year built or renovation year   
+☐ Create a category of within Seattle vs. outside Seattle  
+- Set a price ceiling
+
 
 ## Results
 
-I created 6 models beyond our base model and found that there were varying R2 values ranging from .606 to .513. I found that the last model minimized the MAE and RMSE to the smallest amount. This means that our final model can explain 51.3% of variance in prices. The last model was slightly underfit based on the train vs test. Below we can see the statsmodel summary. Of all of the variables, the following had p values that were significant (less than .05).
+I created 6 models beyond the base model and found that there were varying R2 values ranging from .606 to .513. I found that the last model minimized the MAE and RMSE to the smallest amount. This means that my final model can explain 51.3% of variance in prices. The last model was slightly underfit based on the train vs test. Below we can see the statsmodel summary. Of all of the variables, the following had p values that were significant (less than .05).
 
 sqft_living_log  
 age_log	 
