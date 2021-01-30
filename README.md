@@ -24,14 +24,13 @@ We will prepare and explore the data to see which ones have the most impact for 
 
 I built an initial baseline model using recommended features and no transformations. After this I followed the following plan:
 
-➡️ Create a pyfile function for subsequent analysis  
-☐ Identify and tackle outliers (I noticed a bedroom outlier in particular)  
-☐ Log continous variables  
-☐ One Hot Encode categorical variables  
-☐ Create an age columns based on year built or renovation year   
-☐ Create a category of within Seattle vs. outside Seattle  
-- Set a price ceiling
-
+☐ **Create a pyfile function for subsequent analysis** - this was done to make modeling more effecient  
+☐ **Identify and tackle outliers** - I noticed a bedroom outlier in particular  
+☐ **Log continous variables** - to removeness skewness of original data  
+☐ **One Hot Encode categorical variables** - to encode categories for modeling  
+☐ **Create an age columns based on year built or renovation year** - categorize based on relative age  
+☐ **Create a category of within Seattle vs. outside Seattle** - see what impact a generalized location will have on model  
+☐ **Set a price ceiling** - our tool will be utilized for first-time home buyers so will narrow our house prices  
 
 ## Results
 
@@ -66,7 +65,7 @@ In it's current form, this model is a better predictor of price over the simple 
 ![example of categorical variabe grade versus price](images/cat_variable_grade_vs_price.png)
 
 ### Interesting Finding:
-![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png). 
+![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png)  
 One interesting finding was that older homes within the Seattle city limits tend to be more expensive than newer homes. This trend is reversed outside of Seattle.   
 
 ## Conclusions
@@ -91,8 +90,8 @@ For additional info, contact Shawn Samuel at [shawnjohnsamuel@gmail.com](mailto:
 ```
 ├── data
 ├── images
-├── README.md
-├── sjs_utilities.py
 ├── project-notebook.ipynb
-└── project-presendation.pdf
+├── project-presendation.pdf
+├── README.md
+└── sjs_utilities.py
 ```
