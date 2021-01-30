@@ -81,7 +81,7 @@ We would recommend:
 
 ## For More Information
 
-Please review the full analysis in the [Jupyter Notebook](project-notebook.ipynb) or the [presentation](project-presendation.pdf).
+Please review the full analysis in the [Jupyter Notebook](project-notebook.ipynb) or the [presentation](project-presentation.pdf).
 
 For additional info, contact Shawn Samuel at [shawnjohnsamuel@gmail.com](mailto:shawnjohnsamuel@gmail.com)
 
