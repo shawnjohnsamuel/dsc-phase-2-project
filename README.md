@@ -1,3 +1,4 @@
+![first-time home buyer offer price tool by shawn samuel](images/house-price-prediction-banner.png)
 # Recommending "Offer Price" to First-Time Home Buyers
 
 **Authors**: [Shawn Samuel](mailto:shawnjohnsamuel@gmail.com)  
@@ -70,9 +71,9 @@ One interesting finding was that older homes within the Seattle city limits tend
 
 ## Conclusions
 
-We believe that having an offer price that is data-driven is a very strong tool for a Buyer's Real Estate Agent and so we would recommend this Real Estate Agency continue to support the development of this tool. This could empower the already intuitive decision making that experienced Real Estate Agents engage in. 
+I believe that having an offer price that is data-driven is a very strong tool for a buyer's Real Estate Agent and so I would recommend this ACME Realtors continue to support the development of this tool. This could empower the already intuitive decision making that experienced Real Estate Agents engage in. 
 
-We would recommend: 
+I would recommend: 
 
 1) Creating separate prediction tools for different types of buyers - such as those looking to flip houses, first-time home buyers and luxury home buyers  
 2) Try other transformations other than One Hot Encoding for categorical variables.   
