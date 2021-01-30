@@ -1,4 +1,4 @@
-# Recommending "Offer Price" for First-Time Home Buyers
+# Recommending "Offer Price" to First-Time Home Buyers
 
 **Authors**: [Shawn Samuel](mailto:shawnjohnsamuel@gmail.com)  
 
@@ -22,17 +22,19 @@ We will prepare and explore the data to see which ones have the most impact for 
 
 ## Methods
 
-Describe the process for analyzing or modeling the data. For Phase 1, this will be descriptive analysis.
+I built an initial baseline model using recommended features and no transformations. After this I followed the following plan:
 
-***
-Questions to consider:
-* How did you prepare, analyze or model the data?
-* Why is this approach appropriate given the data and the business problem?
-***
+☐ **Create a pyfile function for subsequent analysis** - this was done to make modeling more effecient  
+☐ **Identify and tackle outliers** - I noticed a bedroom outlier in particular  
+☐ **Log continous variables** - to removeness skewness of original data  
+☐ **One Hot Encode categorical variables** - to encode categories for modeling  
+☐ **Create an age columns based on year built or renovation year** - categorize based on relative age  
+☐ **Create a category of within Seattle vs. outside Seattle** - see what impact a generalized location will have on model  
+☐ **Set a price ceiling** - our tool will be utilized for first-time home buyers so will narrow our house prices  
 
 ## Results
 
-I created 6 models beyond our base model and found that there were varying R2 values ranging from .606 to .513. I found that the last model minimized the MAE and RMSE to the smallest amount. This means that our final model can explain 51.3% of variance in prices. The last model was slightly underfit based on the train vs test. Below we can see the statsmodel summary. Of all of the variables, the following had p values that were significant (less than .05).
+I created 6 models beyond the base model and found that there were varying R2 values ranging from .606 to .513. I found that the last model minimized the MAE and RMSE to the smallest amount. This means that my final model can explain 51.3% of variance in prices. The last model was slightly underfit based on the train vs test. Below we can see the statsmodel summary. Of all of the variables, the following had p values that were significant (less than .05).
 
 sqft_living_log  
 age_log	 
@@ -63,7 +65,7 @@ In it's current form, this model is a better predictor of price over the simple 
 ![example of categorical variabe grade versus price](images/cat_variable_grade_vs_price.png)
 
 ### Interesting Finding:
-![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png)
+![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png)  
 One interesting finding was that older homes within the Seattle city limits tend to be more expensive than newer homes. This trend is reversed outside of Seattle.   
 
 ## Conclusions
@@ -79,16 +81,17 @@ We would recommend:
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](project-notebook.ipynb) or our [presentation](project-presendation.pdf).
+Please review the full analysis in the [Jupyter Notebook](project-notebook.ipynb) or the [presentation](project-presentation.pdf).
 
-For any additional questions, please contact **name & email, name & email**
+For additional info, contact Shawn Samuel at [shawnjohnsamuel@gmail.com](mailto:shawnjohnsamuel@gmail.com)
 
 ## Repository Structure
 
 ```
 ├── data
 ├── images
-├── README.md
 ├── project-notebook.ipynb
-└── project-presendation.pdf
+├── project-presendation.pdf
+├── README.md
+└── sjs_utilities.py
 ```
