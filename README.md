@@ -63,7 +63,7 @@ In it's current form, this model is a better predictor of price over the simple 
 ![example of categorical variabe grade versus price](images/cat_variable_grade_vs_price.png)
 
 ### Interesting Finding:
-![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png)
+![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png). 
 One interesting finding was that older homes within the Seattle city limits tend to be more expensive than newer homes. This trend is reversed outside of Seattle.   
 
 ## Conclusions
@@ -79,9 +79,9 @@ We would recommend:
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](project-notebook.ipynb) or our [presentation](project-presendation.pdf).
+Please review the full analysis in the [Jupyter Notebook](project-notebook.ipynb) or the [presentation](project-presendation.pdf).
 
-For any additional questions, please contact **name & email, name & email**
+For additional info, contact Shawn Samuel at [shawnjohnsamuel@gmail.com](mailto:shawnjohnsamuel@gmail.com)
 
 ## Repository Structure
 
@@ -89,6 +89,7 @@ For any additional questions, please contact **name & email, name & email**
 ├── data
 ├── images
 ├── README.md
+├── sjs_utilities.py
 ├── project-notebook.ipynb
 └── project-presendation.pdf
 ```
