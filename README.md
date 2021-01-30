@@ -1,33 +1,24 @@
-# Title
+# Recommending "Offer Price" for First-Time Home Buyers
 
-**Authors**: Student1, Student2
+**Authors**: [Shawn Samuel](mailto:shawnjohnsamuel@gmail.com)  
 
 ## Overview
 
-A one-paragraph overview of the project, including the business problem, data, methods, results and recommendations.
+This project has tasked us to formulate a business project around a given data set. The data set describes house sales over a 1 year period in King County, USA. I have decided to develop a price prediction tool for a real estate agency that focuses on the needs of home buyers. I will be cleaning the data, testing various transformations like log transformation for continuous variables, one hot encoding for categorical variables, and scaling to prepare the data for multiple linear regression models. We were able to build statistically significant model that could explain 51.3% of the variation in prices from our prediciton and strongly feel that further development will lead to a more accurate tool that can be extremely useful for buyer real estate agents assisting first-time home buyers.
 
 ## Business Problem
 
-Summary of the business problem you are trying to solve, and the data questions that you plan to answer in order to solve them.
+The housing market is booming! With decreased mortgage rates, increased demand and decreased supply - housing prices are also sky high. According to the New York Times, typically 55% to 70% of American home buyers are selling one home and buying another, with the remainder buying a home for the first time. However in recent months, the number of first-time buyers has sharply risen. This leads to increased demand without an equivalent increase in supply. 
 
-***
-Questions to consider:
-* What are the business's pain points related to this project?
-* How did you pick the data analysis question(s) that you did?
-* Why are these questions important from a business perspective?
-***
+I have been tasked with helping first-time home buyers with one of the crucial elements of home buying - determining an 'offer price'. There can be many factors that contribute to this. And being first time home buyers, it can be daunting to figure out what this magic price should be. 
+
+This important price point is often guided buy Buyer's Real Estate Agent and this data driven prediction tool is being built for one such Agency. I will use the historical data of houses sold in King County, Washington to predict the best asking price based on relevant factors.  
 
 ## Data
 
-Describe the data being used for this project.
+The data set [('kc_house_data.csv')](data/kc_house_data.csv) describes house sales in King County, Washington, USA (which includes the city of Seattle) between 2014 and 2015. There are 21,597 rows of entries across 21 columns, including the target variable 'price'. The dependant variables include information about individual homes that have been sold such as square footage, year built, and many more details. 
 
-***
-Questions to consider:
-* Where did the data come from, and how do they relate to the data analysis questions?
-* What do the data represent? Who is in the sample and what variables are included?
-* What is the target variable?
-* What are the properties of the variables you intend to use?
-***
+We will prepare and explore the data to see which ones have the most impact for asking price determination for first-time home buyers. We will focus on the middle and low end of the market in terms of price, as first time home buyers will likely not be in the luxury home market.
 
 ## Methods
 
@@ -41,44 +32,63 @@ Questions to consider:
 
 ## Results
 
-Present your key results. For Phase 1, this will be findings from your descriptive analysis.
+I created 6 models beyond our base model and found that there were varying R2 values ranging from .606 to .513. I found that the last model minimized the MAE and RMSE to the smallest amount. This means that our final model can explain 51.3% of variance in prices. The last model was slightly underfit based on the train vs test. Below we can see the statsmodel summary. Of all of the variables, the following had p values that were significant (less than .05).
 
-***
-Questions to consider:
-* How do you interpret the results?
-* How confident are you that your results would generalize beyond the data you have?
-***
+sqft_living_log  
+age_log	 
+bedrooms_2  
+bedrooms_3  
+bedrooms_4  
+bedrooms_5  
+bedrooms_6  
+bedrooms_7  
+bathrooms_3.5  
+bathrooms_3.75  
+floors_1.5  
+floors_2.0  
+floors_2.5  
+floors_3.0  
+condition_5  
+grade_9  
+grade_10  
+grade_11  
+in_seattle  
 
-Here is an example of how to embed images from your sub-folder:
+In it's current form, this model is a better predictor of price over the simple mean price of $540,296.60. I believe with further modeling, it be very useful as a tool for first time home-buyers. Based on the train-test split - this model is generalizable and can be used for data not yet seen. Below you can see some of the visualizations generated from data exploration:  
 
-### Visual 1
-![graph1](./images/viz1.png)
+### Example Of Continuous Variable (Sqft vs. Price)  
+![example of continuous variabe square feet versus price](images/cont_variable_sqft_vs_price.png)
+
+### Example Of Categorical Variable (Grade vs. Price)  
+![example of categorical variabe grade versus price](images/cat_variable_grade_vs_price.png)
+
+### Interesting Finding:
+![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png)
+One interesting finding was that older homes within the Seattle city limits tend to be more expensive than newer homes. This trend is reversed outside of Seattle.   
 
 ## Conclusions
 
-Provide your conclusions about the work you've done, including any limitations or next steps.
+We believe that having an offer price that is data-driven is a very strong tool for a Buyer's Real Estate Agent and so we would recommend this Real Estate Agency continue to support the development of this tool. This could empower the already intuitive decision making that experienced Real Estate Agents engage in. 
 
-***
-Questions to consider:
-* What would you recommend the business do as a result of this work?
-* What are some reasons why your analysis might not fully solve the business problem?
-* What else could you do in the future to improve this project?
-***
+We would recommend: 
+
+1) Creating separate prediction tools for different types of buyers - such as those looking to flip houses, first-time home buyers and luxury home buyers  
+2) Try other transformations other than One Hot Encoding for categorical variables.   
+3) Experiment with inclusion of all available parameters.  
+4) Build a graphical user interface where all available information can be input for easy use of prediction tool
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-template.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](project-notebook.ipynb) or our [presentation](project-presendation.pdf).
 
 For any additional questions, please contact **name & email, name & email**
 
 ## Repository Structure
 
-Describe the structure of your repository and its contents, for example:
-
 ```
-├── README.md                           <- The top-level README for reviewers of this project
-├── dsc-phase1-project-template.ipynb   <- Narrative documentation of analysis in Jupyter notebook
-├── DS_Project_Presentation.pdf         <- PDF version of project presentation
-├── data                                <- Both sourced externally and generated from code
-└── images                              <- Both sourced externally and generated from code
+├── data
+├── images
+├── README.md
+├── project-notebook.ipynb
+└── project-presendation.pdf
 ```
