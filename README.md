@@ -49,7 +49,7 @@ One interesting finding was that older homes within the Seattle city limits tend
 
 ## Recommendations
 
-In it's current form, this model is a better predictor of price than the simple mean price of \\$540,296.60 or even median of \\$450,000. I believe with further modeling, it can be very useful as a tool for buyer's real estate agents making offer price recommendations for time home-buyers. They can even make recommendations to first-time home buyers to reduce their price cost. For example, our model shows that square footage, whether or not the house is in Seattle as well as age greatly affect price. So to reduce cost, first-time home buyers can opt for smaller, slightly older homes outside of Seattle.
+In it's current form, this model is a better predictor of price than the simple mean price of \$540,296.60 or even median of \$450,000. I believe with further modeling, it can be very useful as a tool for buyer's real estate agents making offer price recommendations for time home-buyers. They can even make recommendations to first-time home buyers to reduce their price cost. For example, our model shows that square footage, whether or not the house is in Seattle as well as age greatly affect price. So to reduce cost, first-time home buyers can opt for smaller, slightly older homes outside of Seattle.
 
 ## Future Work
 
