@@ -37,9 +37,11 @@ def model_analysis(name, model, df, continuous, categoricals, log=True, OHE=True
         
     Returns:
      - model - fit sklearn model
-     - X, y, X_train, y_train - if needed for OLS
+     - scaler - fit scaler
      - y_train_preds - predictions for the training set
      - y_test_preds - predictions for the test set
+     - X_test, y_test - if needed for OLS
+     - X, y - if needed for final model
     '''
     preprocessed = df.copy()
     
@@ -64,9 +66,6 @@ def model_analysis(name, model, df, continuous, categoricals, log=True, OHE=True
     # train test split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, 
                                                     random_state=seed)
-    
-    # create copies for OLS
-    X_train_copy = X_train.copy()
     
     # Min Max Scaler
     if scale==True:
@@ -108,7 +107,7 @@ def model_analysis(name, model, df, continuous, categoricals, log=True, OHE=True
     plt.show()
     
     # display feature weights using ELI5
-    display(eli5.show_weights(model, feature_names=list(X.columns)))
+    display(eli5.show_weights(model, feature_names=X_cols))
         
     #add name, metrics and description to new row
     new_row = []
@@ -121,4 +120,4 @@ def model_analysis(name, model, df, continuous, categoricals, log=True, OHE=True
     metrics.loc[len(metrics.index)] = new_row
     display(metrics.sort_index(ascending=False, axis=0))
 
-    return model, X, y, X_train_copy, y_train, y_train_pred, y_test_pred
+    return model, scaler, y_train_pred, y_test_pred, X_test, y_test, X, y
