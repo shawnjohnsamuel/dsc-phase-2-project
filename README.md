@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project has tasked us to formulate a business project around a given data set. The data set describes house sales over a 1 year period in King County, USA. I have decided to develop a price prediction tool for a real estate agency that focuses on the needs of home buyers. I will be cleaning the data, testing various transformations like log transformation for continuous variables, one hot encoding for categorical variables, and scaling to prepare the data for multiple linear regression models. We were able to build statistically significant model that could explain 51.3% of the variation in prices from our prediciton and strongly feel that further development will lead to a more accurate tool that can be extremely useful for buyer real estate agents assisting first-time home buyers.
+This project has tasked us to formulate a business project around a given data set. The data set describes house sales over a 1 year period in King County, USA. I have decided to develop a price prediction tool for a real estate agency that focuses on the needs of home buyers. I will be cleaning the data, testing various transformations like log transformation for continuous variables, one hot encoding for categorical variables, and scaling to prepare the data for multiple linear regression models. We were able to build statistically significant model that could explain 53.2% of the variation in prices from our prediciton and strongly feel that further development will lead to a more accurate tool that can be extremely useful for buyer real estate agents assisting first-time home buyers.
 
 ## Business Problem
 
@@ -35,29 +35,7 @@ I built an initial baseline model using recommended features and no transformati
 
 ## Results
 
-I created 6 models beyond the base model and found that there were varying R2 values ranging from .606 to .513. I found that the last model minimized the MAE and RMSE to the smallest amount. This means that my final model can explain 51.3% of variance in prices. The last model was slightly underfit based on the train vs test. Below we can see the statsmodel summary. Of all of the variables, the following had p values that were significant (less than .05).
-
-sqft_living_log  
-age_log	 
-bedrooms_2  
-bedrooms_3  
-bedrooms_4  
-bedrooms_5  
-bedrooms_6  
-bedrooms_7  
-bathrooms_3.5  
-bathrooms_3.75  
-floors_1.5  
-floors_2.0  
-floors_2.5  
-floors_3.0  
-condition_5  
-grade_9  
-grade_10  
-grade_11  
-in_seattle  
-
-In it's current form, this model is a better predictor of price over the simple mean price of $540,296.60. I believe with further modeling, it be very useful as a tool for first time home-buyers. Based on the train-test split - this model is generalizable and can be used for data not yet seen. Below you can see some of the visualizations generated from data exploration:  
+I created 6 models beyond our base model and found that there were varying R2 values ranging from .532 to .609. I found that the last model minimized the MAE and RMSE to the smallest amount. The last model was slightly underfit based on the train vs test. This model was then run on the entire data set and returned a R2 of 0.532. This means that our final model can explain 53.2% of variance in prices. Based on the train-test split, this model is generalizable and can be used for data not yet seen.  Below you can see some of the visualizations generated from data exploration:  
 
 ### Example Of Continuous Variable (Sqft vs. Price)  
 ![example of continuous variabe square feet versus price](images/cont_variable_sqft_vs_price.png)
@@ -69,16 +47,17 @@ In it's current form, this model is a better predictor of price over the simple 
 ![older homes in seattle limit tend to be more expensive than newer homes](images/age_vs_price_in_or_out_seattle.png)  
 One interesting finding was that older homes within the Seattle city limits tend to be more expensive than newer homes. This trend is reversed outside of Seattle.   
 
-## Conclusions
+## Recommendations
 
-I believe that having an offer price that is data-driven is a very strong tool for a buyer's Real Estate Agent and so I would recommend this ACME Realtors continue to support the development of this tool. This could empower the already intuitive decision making that experienced Real Estate Agents engage in. 
+In it's current form, this model is a better predictor of price than the simple mean price of \\$540,296.60 or even median of \\$450,000. I believe with further modeling, it can be very useful as a tool for buyer's real estate agents making offer price recommendations for time home-buyers. They can even make recommendations to first-time home buyers to reduce their price cost. For example, our model shows that square footage, whether or not the house is in Seattle as well as age greatly affect price. So to reduce cost, first-time home buyers can opt for smaller, slightly older outside of Seattle.
 
-I would recommend: 
+## Future Work
 
-1) Creating separate prediction tools for different types of buyers - such as those looking to flip houses, first-time home buyers and luxury home buyers  
-2) Try other transformations other than One Hot Encoding for categorical variables.   
-3) Experiment with inclusion of all available parameters.  
-4) Build a graphical user interface where all available information can be input for easy use of prediction tool
+I believe that having an offer price that is data-driven is a very strong tool for a Buyer's Real Estate Agent and so we would recommend this Real Estate Agency continue to support the development of this tool. This could empower the already intuitive decision making that experienced Real Estate Agents engage in. The following are some potential areas of future work:
+
+1) Creating separate prediction tools for different types of buyers - such as those looking to flip houses, first-time home buyers and luxury home buyers    
+2) Experiment with inclusion of all available parameters.  
+3) Build a graphical user interface where all available information can be input for easy use of prediction tool
 
 ## For More Information
 
